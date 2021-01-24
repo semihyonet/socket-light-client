@@ -44,7 +44,7 @@ const MainScreen = () => {
 		return () => {
 			disconnectSocket();
 		};
-	}, []);
+	}, [setInitialState, setPeople]);
 
 	return (
 		<div
