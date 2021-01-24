@@ -22,14 +22,9 @@ export const LightProvider = ({ children }) => {
 	const [onlinePeople, setPeople] = useState(0);
 	useEffect(() => {
 		subscribeNewState((a) => setInitialState(a));
-	}, []);
+	});
 	useEffect(() => {
 		setColor(lightColor(redLight, blueLight, greenLight));
-		toggledLight({
-			red: redLight,
-			green: greenLight,
-			blue: blueLight,
-		});
 	}, [redLight, blueLight, greenLight]);
 
 	const setInitialState = (state) => {
@@ -63,15 +58,29 @@ export const LightProvider = ({ children }) => {
 	const toggleRed = () => {
 		setRedLight((redLight + 1) % 2);
 		// toggledLight({ red: redLight, green: greenLight, blue: blueLight });
+		toggledLight({
+			red: redLight,
+			green: greenLight,
+			blue: blueLight,
+		});
 	};
 	const toggleGreen = () => {
 		setGreenLight((greenLight + 1) % 2);
-
+		toggledLight({
+			red: redLight,
+			green: greenLight,
+			blue: blueLight,
+		});
 		// toggledLight({ red: redLight, green: greenLight, blue: blueLight });
 	};
 
 	const toggleBlue = () => {
 		setBlueLight((blueLight + 1) % 2);
+		toggledLight({
+			red: redLight,
+			green: greenLight,
+			blue: blueLight,
+		});
 		// toggledLight({ red: redLight, green: greenLight, blue: blueLight });
 	};
 	const values = {
