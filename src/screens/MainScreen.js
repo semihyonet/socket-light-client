@@ -43,7 +43,7 @@ const MainScreen = () => {
 		subscribeInitialState((a) => {
 			setInitialState(a);
 		});
-	}, [setInitialState, setPeople]);
+	});
 
 	return (
 		<div
@@ -94,11 +94,6 @@ const MainScreen = () => {
 					src={switchy}
 					alt={"lightBulb"}
 				/>
-			</div>
-			<div className={styles.nameContainer}>
-				<div className={styles.lightImg}>Red</div>
-				<div className={styles.lightImg}>Red</div>
-				<div className={styles.lightImg}>Red</div>
 			</div>
 		</div>
 	);
