@@ -56,31 +56,31 @@ export const LightProvider = ({ children }) => {
 	}, [greenLight, switchOffSound, switchOnSound]);
 
 	const toggleRed = () => {
+		toggledLight({
+			red: redLight === 1 ? 0 : 1,
+			green: greenLight,
+			blue: blueLight,
+		});
 		setRedLight((redLight + 1) % 2);
 		// toggledLight({ red: redLight, green: greenLight, blue: blueLight });
-		toggledLight({
-			red: redLight,
-			green: greenLight,
-			blue: blueLight,
-		});
 	};
 	const toggleGreen = () => {
-		setGreenLight((greenLight + 1) % 2);
 		toggledLight({
 			red: redLight,
-			green: greenLight,
+			green: greenLight === 1 ? 0 : 1,
 			blue: blueLight,
 		});
+		setGreenLight((greenLight + 1) % 2);
 		// toggledLight({ red: redLight, green: greenLight, blue: blueLight });
 	};
 
 	const toggleBlue = () => {
-		setBlueLight((blueLight + 1) % 2);
 		toggledLight({
 			red: redLight,
 			green: greenLight,
-			blue: blueLight,
+			blue: blueLight === 1 ? 0 : 1,
 		});
+		setBlueLight((blueLight + 1) % 2);
 		// toggledLight({ red: redLight, green: greenLight, blue: blueLight });
 	};
 	const values = {
