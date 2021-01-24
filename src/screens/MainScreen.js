@@ -31,6 +31,13 @@ const MainScreen = () => {
 
 	useEffect(() => {
 		initSocket();
+
+		return () => {
+			disconnectSocket();
+		};
+	}, []);
+
+	useEffect(() => {
 		subscribeToPeopleNum((a) => {
 			setPeople(a);
 		});
@@ -41,9 +48,6 @@ const MainScreen = () => {
 		subscribeNewState((a) => {
 			setInitialState(a);
 		});
-		return () => {
-			disconnectSocket();
-		};
 	}, [setInitialState, setPeople]);
 
 	return (

@@ -1,0 +1,16 @@
+.mainContainer {
+	background-color: burlywood;
+	position: absolute;
+	border-radius: 30%;
+	right: 10vw;
+	top: 5vh;
+	-webkit-box-shadow: 5px 5px 23px 14px #000000;
+	box-shadow: 5px 5px 23px 14px #000000;
+	padding: 0.8% 1%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.person {
+	height: 20px;
+}
