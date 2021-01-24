@@ -22,7 +22,7 @@ export const LightProvider = ({ children }) => {
 	const [onlinePeople, setPeople] = useState(0);
 	useEffect(() => {
 		subscribeNewState((a) => setInitialState(a));
-	});
+	}, []);
 	useEffect(() => {
 		setColor(lightColor(redLight, blueLight, greenLight));
 		toggledLight({

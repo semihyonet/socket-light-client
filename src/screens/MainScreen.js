@@ -8,7 +8,6 @@ import {
 	disconnectSocket,
 	subscribeToPeopleNum,
 	subscribeInitialState,
-	subscribeNewState,
 } from "../socket/socketMethods";
 
 import PeopleCount from "../components/PeopleCount/PeopleCount";
@@ -42,10 +41,6 @@ const MainScreen = () => {
 			setPeople(a);
 		});
 		subscribeInitialState((a) => {
-			setInitialState(a);
-		});
-
-		subscribeNewState((a) => {
 			setInitialState(a);
 		});
 	}, [setInitialState, setPeople]);
@@ -99,6 +94,11 @@ const MainScreen = () => {
 					src={switchy}
 					alt={"lightBulb"}
 				/>
+			</div>
+			<div className={styles.nameContainer}>
+				<div className={styles.lightImg}>Red</div>
+				<div className={styles.lightImg}>Red</div>
+				<div className={styles.lightImg}>Red</div>
 			</div>
 		</div>
 	);
